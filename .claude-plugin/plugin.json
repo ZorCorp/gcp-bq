@@ -1,7 +1,7 @@
 {
   "name": "gcp-bq",
   "description": "Query GCP monthly billing cost per billing account, broken down per project, from BigQuery billing export behind a private Cloud Run endpoint. Read-only. The agent signs a short-lived Google ID token with gcloud and queries the endpoint directly over curl — no MCP server, proxy, or binary to install. You only need gcloud, logged in with an account that has Cloud Run run.invoker.",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "author": {
     "name": "laucw1213",
     "url": "https://github.com/laucw1213"
