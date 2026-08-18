@@ -36,13 +36,13 @@ gcloud auth print-identity-token >/dev/null 2>&1 || gcloud auth login
 
 ## How to query
 
-Endpoint: `https://bq-mcp-586459078049.asia-east2.run.app/mcp/billing`
+Endpoint: `https://bq-gcp-billing-586459078049.asia-east2.run.app/mcp/billing`
 
 Use exactly this path — it serves the 6 tools below and nothing else.
 
 ```bash
 TOKEN=$(gcloud auth print-identity-token)
-curl -s -X POST https://bq-mcp-586459078049.asia-east2.run.app/mcp/billing \
+curl -s -X POST https://bq-gcp-billing-586459078049.asia-east2.run.app/mcp/billing \
   -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"total_cost","arguments":{"bq_table":"<a bq_table from list_resellers>","from_month":"202607","to_month":"202607"}}}'
